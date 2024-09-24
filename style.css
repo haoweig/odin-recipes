@@ -1,24 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap');
 
 :root {
-  --bg-color: #f0f0f0;
-  --text-color: #333;
-  --header-bg: #fff;
-  --header-text: #ff6b6b;
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  --hover-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --header-bg: #fff;
+    --header-text: #ff6b6b;
+    --header-border: #ddd;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --hover-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
 
-.dark-mode {
-  --bg-color: #333;
-  --text-color: #f0f0f0;
-  --header-bg: #222;
-  --header-text: #ff9b9b;
-  --card-bg: rgba(50, 50, 50, 0.8);
-  --card-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  --hover-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
+  .dark-mode {
+    --bg-color: #333;
+    --text-color: #f0f0f0;
+    --header-bg: #222;
+    --header-text: #ff9b9b;
+    --header-border: #444;
+    --card-bg: rgba(50, 50, 50, 0.8);
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    --hover-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
 
 body {
   font-family: 'Fredoka', sans-serif;
@@ -33,7 +35,7 @@ body {
 .header {
   text-align: center;
   padding: 40px 0;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid var(--header-border);
   background-color: var(--header-bg);
 }
 
