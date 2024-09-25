@@ -77,7 +77,7 @@ h1 {
 .mode-slider {
   -webkit-appearance: none;
   appearance: none;
-  width: 80px;
+  width: 40px;
   height: 20px;
   background: linear-gradient(to right, #ff9b9b, #ff6b6b);
   outline: none;
@@ -105,6 +105,9 @@ h1 {
   cursor: pointer;
 }
 
+/* ul default display:block. list items in it also block, thus they will stack vertically */
+/* recipe-list is a flex container */
+/* justify-content is how we arrange the horizontal aligment of the flex items */
 .recipe-list {
   display: flex;
   flex-wrap: wrap;
@@ -114,6 +117,7 @@ h1 {
   list-style-type: none;
 }
 
+/* recipe-item is a flex item */
 .recipe-item {
   width: 300px;
   margin-bottom: 30px;
@@ -134,7 +138,7 @@ h1 {
 }
 
 .recipe-image {
-  height: 87.5%;
+  height: 80%;
   background-size: cover;
   background-position: center;
   border-top-left-radius: 15px;
@@ -142,7 +146,7 @@ h1 {
 }
 
 .recipe-title {
-  height: 12.5%;
+  height: 20%;
   color: var(--text-color);
   padding: 10px;
   display: flex;
