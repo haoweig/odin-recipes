@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="mode-toggle-container">
-        <button class="mode-toggle">
-          <span class="mode-icon">☀️</span>
-          <input type="range" class="mode-slider" min="0" max="1" value="0" step="1">
-          <span class="mode-icon">🌙</span>
-        </button>
-      </div>
-        <header class="header">
-        <h1>Odin's Recipes</h1>
+    <header class="header">
+        <div class="logo">🍘</div>
+        <nav>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link">Comments</a>
+        </nav>
+        <div class="mode-toggle-container">
+            <button class="mode-toggle">
+                <span class="mode-icon">☀️</span>
+                <input type="range" class="mode-slider" min="0" max="1" value="0" step="1">
+                <span class="mode-icon">🌙</span>
+            </button>
+        </div>
     </header>
     <main>
         <ul class="recipe-list">
@@ -49,13 +54,22 @@
         const modeToggle = document.querySelector('.mode-toggle');
         const modeSlider = document.querySelector('.mode-slider');
         const modeIcons = document.querySelectorAll('.mode-icon');
-    
-        modeSlider.addEventListener('input', () => {
-          document.body.classList.toggle('dark-mode', modeSlider.value == 1);
-          modeIcons.forEach((icon, index) => {
-            icon.style.opacity = modeSlider.value == index ? 1 : 0.3;
-          });
+
+        modeToggle.addEventListener('click', (event) => {
+            if (event.target !== modeSlider) {
+                modeSlider.value = modeSlider.value === "0" ? "1" : "0";
+                updateMode();
+            }
         });
-      </script>
+
+        modeSlider.addEventListener('input', updateMode);
+
+        function updateMode() {
+            document.body.classList.toggle('dark-mode', modeSlider.value === "1");
+            modeIcons.forEach((icon, index) => {
+                icon.style.opacity = modeSlider.value == index ? 1 : 0.3;
+            });
+        }
+    </script>
 </body>
 </html>
