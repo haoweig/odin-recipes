@@ -35,7 +35,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  max-width: 1200px;
+  max-width: 2000px;
   margin: 0 auto;
 }
 
@@ -86,28 +86,30 @@ nav {
   justify-content: space-between;
   align-items: stretch;
   padding: 60px 20px;
-  max-width: 1200px;
+  max-width: 2000px;
   margin: 0 auto;
 }
 
 .hero-left {
-  flex: 1;
+  flex: 2 0;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-right {
-  flex: 1;
+  flex: 1 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding-left: 40px;
 }
 
 .hero-title {
   font-family: 'Roboto', serif;
-  font-size: 6em;
+  /* em is relative to element's parent's font size. default font size is 16px */
+  /* use vw instead so that font size scales with the screen, 11vm is 11% of viewport width */
+  font-size: 9.5vw;
   color: var(--header-text);
   margin: 0 0 20px 0;
   font-weight: 400;
@@ -116,7 +118,7 @@ nav {
 
 .hero-subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 2em;
+  font-size: 2vw;
   color: var(--text-color);
   font-weight: 400;
   font-style: italic;
@@ -125,7 +127,7 @@ nav {
 
 .hero-right p {
   color: var(--text-color);
-  font-size: 1.2em;
+  font-size: 1.5vw;
   line-height: 1.8;
   text-align: left;
 }
@@ -147,16 +149,16 @@ nav {
   }
 
   .hero-title {
-      font-size: 4em;
+      font-size: 12vw;
   }
 
   .hero-subtitle {
-      font-size: 1.5em;
+      font-size: 3vw;
   }
 }
 
 main {
-  max-width: 1200px;
+  max-width: 2000px;
   margin: 0 auto;
   padding: 20px;
 }
